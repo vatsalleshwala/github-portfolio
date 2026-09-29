@@ -1,0 +1,77 @@
+# Operating System Files
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# Editor & IDE Directories / Files
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+.#*
+
+# Archives and Large Binaries
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Environment variables & credentials
+.env
+.env.*
+!.env.example
+
+# Logs and runtime files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Node / Web Build Outputs (if frontend tooling is added)
+node_modules/
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+
+# Temporary / Scratch Files
+tmp/
+temp/
+
+# Flutter / Dart (for packages in Library/Flutter)
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+
+# Library folder
+Library/
