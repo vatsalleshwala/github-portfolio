@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vatsal Leshwala - Portfolio. Android & Flutter Developer with 5 years of professional experience creating high-performance native and cross-platform apps.">
+  <title>Vatsal Leshwala | Android &amp; Flutter Mobile Engineer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" style="display: none;" aria-hidden="true">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.getElementById('theme-toggle').checked = true;
+      }
+    })();
+    window.addEventListener('pageshow', function() {
+      const savedTheme = localStorage.getItem('theme');
+      const checkbox = document.getElementById('theme-toggle');
+      if (checkbox) {
+        checkbox.checked = (savedTheme === 'dark');
+      }
+    });
+  </script>
+
+  <!-- Particle Background -->
+  <div class="particle-container">
+    <!-- 30 particles with varied positions, sizes, speeds, and negative delays to ensure a pre-scattered state on load -->
+    <div class="particle" style="--left: 4%; --size: 3px; --duration: 18s; --delay: -2s; --opacity: 0.3;"></div>
+    <div class="particle" style="--left: 8%; --size: 5px; --duration: 22s; --delay: -12s; --opacity: 0.4;"></div>
+    <div class="particle" style="--left: 15%; --size: 2px; --duration: 15s; --delay: -5s; --opacity: 0.2;"></div>
+    <div class="particle" style="--left: 23%; --size: 4px; --duration: 25s; --delay: -18s; --opacity: 0.5;"></div>
+    <div class="particle" style="--left: 28%; --size: 6px; --duration: 28s; --delay: -8s; --opacity: 0.3;"></div>
+    <div class="particle" style="--left: 35%; --size: 3px; --duration: 20s; --delay: -14s; --opacity: 0.4;"></div>
+    <div class="particle" style="--left: 42%; --size: 2px; --duration: 16s; --delay: -3s; --opacity: 0.6;"></div>
+    <div class="particle" style="--left: 48%; --size: 5px; --duration: 24s; --delay: -22s; --opacity: 0.3;"></div>
+    <div class="particle" style="--left: 54%; --size: 4px; --duration: 19s; --delay: -7s; --opacity: 0.5;"></div>
+    <div class="particle" style="--left: 60%; --size: 3px; --duration: 27s; --delay: -11s; --opacity: 0.2;"></div>
+    <div class="particle" style="--left: 67%; --size: 7px; --duration: 30s; --delay: -25s; --opacity: 0.4;"></div>
+    <div class="particle" style="--left: 73%; --size: 2px; --duration: 14s; --delay: -9s; --opacity: 0.6;"></div>
+    <div class="particle" style="--left: 78%; --size: 5px; --duration: 21s; --delay: -4s; --opacity: 0.3;"></div>
+    <div class="particle" style="--left: 85%; --size: 4px; --duration: 26s; --delay: -16s; --opacity: 0.5;"></div>
+    <div class="particle" style="--left: 92%; --size: 3px; --duration: 17s; --delay: -1s; --opacity: 0.4;"></div>
+    <div class="particle" style="--left: 96%; --size: 6px; --duration: 29s; --delay: -13s; --opacity: 0.2;"></div>
+    <!-- Additional particles for depth -->
+    <div class="particle" style="--left: 10%; --size: 3px; --duration: 24s; --delay: -15s; --opacity: 0.4;"></div>
+    <div class="particle" style="--left: 19%; --size: 4px; --duration: 18s; --delay: -6s; --opacity: 0.3;"></div>
+    <div class="particle" style="--left: 31%; --size: 2px; --duration: 22s; --delay: -9s; --opacity: 0.5;"></div>
+    <div class="particle" style="--left: 39%; --size: 5px; --duration: 26s; --delay: -21s; --opacity: 0.4;"></div>
+    <div class="particle" style="--left: 50%; --size: 3px; --duration: 15s; --delay: -4s; --opacity: 0.3;"></div>
+    <div class="particle" style="--left: 58%; --size: 6px; --duration: 20s; --delay: -12s; --opacity: 0.5;"></div>
+    <div class="particle" style="--left: 65%; --size: 2px; --duration: 28s; --delay: -17s; --opacity: 0.2;"></div>
+    <div class="particle" style="--left: 76%; --size: 4px; --duration: 23s; --delay: -2s; --opacity: 0.4;"></div>
+    <div class="particle" style="--left: 82%; --size: 5px; --duration: 19s; --delay: -10s; --opacity: 0.5;"></div>
+    <div class="particle" style="--left: 89%; --size: 3px; --duration: 25s; --delay: -7s; --opacity: 0.3;"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="header-container">
+      <a href="#home" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+        </svg>
+        <span>VATSAL</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="nav" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="resume.html" class="nav-link">Resume</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li>
+            <label for="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+              <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </label>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-tag">Android &amp; Flutter Developer</div>
+        <h1 class="hero-title">Vatsal <span class="text-glow">Leshwala</span></h1>
+        <p class="hero-subtitle">
+          I build smooth and fast mobile applications. I have 5 years of professional experience in Android (Java/Kotlin) and Flutter development, creating apps that look great and run perfectly.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary float-btn">
+            Explore My Projects
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <div class="indicator-arrow"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01 / Profile</span>
+          <h2 class="section-title">My Mobile Development Work</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-card">
+            <h3>Who I Am</h3>
+            <p>
+              I am a mobile app developer who loves building user-friendly interfaces and strong app structures. I focus on writing clean code, integrating mobile features, and creating smooth designs.
+            </p>
+            <p>
+              Currently working at <strong>Tanna Infotech</strong>, my experience includes building mobile features like GPS tracking, Mapbox maps, secure payments, and reusable UI layouts. I focus on making apps load fast and respond quickly for users.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="resume.html" class="btn btn-primary">
+                View Full Resume
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="about-card skills-card">
+            <h3>My Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h4>Languages</h4>
+                <div class="tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Dart</span>
+                  <span class="tag">Kotlin</span>
+                  <span class="tag">SQL</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <h4>Frameworks &amp; SDKs</h4>
+                <div class="tags">
+                  <span class="tag">Android SDK</span>
+                  <span class="tag">Flutter SDK</span>
+                  <span class="tag">Mapbox API</span>
+                  <span class="tag">Telematics SDK</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <h4>Libraries &amp; Cloud</h4>
+                <div class="tags">
+                  <span class="tag">MobX &amp; Provider</span>
+                  <span class="tag">Firebase Firestore</span>
+                  <span class="tag">PhonePe Payment</span>
+                  <span class="tag">FCM Push Alerts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">02 / Portfolio</span>
+          <h2 class="section-title">My Projects</h2>
+        </div>
+
+        <!-- Filter System Wrapper -->
+        <div class="projects-filter-container">
+          
+          <!-- Hidden inputs for radio-based CSS filtering -->
+          <input type="radio" name="project-filter" id="filter-all" checked>
+          <input type="radio" name="project-filter" id="filter-android">
+          <input type="radio" name="project-filter" id="filter-flutter">
+          <input type="radio" name="project-filter" id="filter-tanna">
+          <input type="radio" name="project-filter" id="filter-codeash">
+          <input type="radio" name="project-filter" id="filter-libraries">
+
+          <!-- Filter Labels (Interacted by User) -->
+          <div class="project-filters">
+            <label for="filter-all" class="filter-btn">All Projects</label>
+            <label for="filter-android" class="filter-btn">Android Native</label>
+            <label for="filter-flutter" class="filter-btn">Flutter</label>
+            <label for="filter-tanna" class="filter-btn">Tanna Infotech</label>
+            <label for="filter-codeash" class="filter-btn">Codeash Infotech</label>
+            <label for="filter-libraries" class="filter-btn">Custom Packages</label>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="projects-grid">
+            
+            <!-- Project 1: Genius Insight (Android Native) -->
+            <article class="project-card" data-category="android" data-company="codeash" style="--drift-time: 7.2s; --drift-delay: -0.8s;">
+              <div class="project-img-wrapper">
+                <img src="images/insighthealthapps.geniusbiofeedback_icon.png" alt="Genius Insight" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">01</span>
+                </div>
+                <h3 class="project-title">Genius Insight Biofeedback</h3>
+                <p class="project-desc">
+                  A comprehensive wellness and biofeedback application that analyzes body voice and energy frequencies to generate customized balancing sound frequencies, helping restore natural physical harmony.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Kotlin</span>
+                  <span class="tag">Retrofit</span>
+                  <span class="tag">Room DB</span>
+                  <span class="tag">Data Binding</span>
+                  <span class="tag">Localization</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=insighthealthapps.geniusbiofeedback" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2: TripFacts (Flutter) -->
+            <article class="project-card" data-category="flutter" data-company="codeash" style="--drift-time: 7.8s; --drift-delay: -1.5s;">
+              <div class="project-img-wrapper">
+                <img src="images/com.tripfacts.tripfacts_icon.png" alt="TripFacts" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Flutter</span>
+                  <span class="project-num">02</span>
+                </div>
+                <h3 class="project-title">TripFacts</h3>
+                <p class="project-desc">
+                  A location-aware travel app that displays interesting cultural facts and quizzes about nearby landmarks, featuring real-time Firestore database synchronization and local notifications.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">Dart</span>
+                  <span class="tag">Firebase Firestore</span>
+                  <span class="tag">Location APIs</span>
+                  <span class="tag">Local Notifications</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.tripfacts.tripfacts" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3: BioVibe (Android Native) -->
+            <article class="project-card" data-category="android" data-company="codeash" style="--drift-time: 7.4s; --drift-delay: -1.1s;">
+              <div class="project-img-wrapper">
+                <img src="images/com.possibilitywave.biovibes_icon.png" alt="BioVibe" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">03</span>
+                </div>
+                <h3 class="project-title">BioVibe</h3>
+                <p class="project-desc">
+                  A premium wellness sound application that compiles specific audio frequencies to balance body energy levels, reduce daily stress, and support overall holistic health.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Kotlin</span>
+                  <span class="tag">64-bit NDK</span>
+                  <span class="tag">16KB Align</span>
+                  <span class="tag">Retrofit</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.possibilitywave.biovibes" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 4: GYDO (Android Native) -->
+            <article class="project-card" data-category="android" data-company="codeash" style="--drift-time: 8.0s; --drift-delay: -2.0s;">
+              <div class="project-img-wrapper">
+                <img src="images/com.app.getyourdrinkon_icon.png" alt="GYDO" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">04</span>
+                </div>
+                <h3 class="project-title">GYDO</h3>
+                <p class="project-desc">
+                  A dynamic social messaging application designed to connect with friends, coordinate local events, and share media messages instantly in structured real-time chats.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Android SDK</span>
+                  <span class="tag">REST API</span>
+                  <span class="tag">Emoji Library</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.app.getyourdrinkon" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 5: iLife Infinity (Android Native) -->
+            <article class="project-card" data-category="android" data-company="codeash" style="--drift-time: 7.1s; --drift-delay: -0.5s;">
+              <div class="project-img-wrapper">
+                <img src="images/com.rosberry.infinity_icon.png" alt="iLife Infinity" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">05</span>
+                </div>
+                <h3 class="project-title">iLife Infinity</h3>
+                <p class="project-desc">
+                  An advanced multi-channel sound therapy suite that allows users to generate precise therapeutic frequency waves and view detailed real-time body energy feedback charts.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Kotlin</span>
+                  <span class="tag">Gradle Upgrade</span>
+                  <span class="tag">AGP 8.x</span>
+                  <span class="tag">Multi-Language</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.rosberry.infinity" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 6: Odyssey (Android Native) -->
+            <article class="project-card" data-category="android" data-company="codeash" style="--drift-time: 8.3s; --drift-delay: -2.7s;">
+              <div class="project-img-wrapper">
+                <img src="images/com.insighthealthapps.odyssey_icon.png" alt="Odyssey" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">06</span>
+                </div>
+                <h3 class="project-title">Odyssey Meditation</h3>
+                <p class="project-desc">
+                  A relaxing guided meditation and mindfulness application featuring curated ambient frequency music, deep breathing exercises, and customizable sessions.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Android SDK</span>
+                  <span class="tag">OnBackPressed</span>
+                  <span class="tag">SDK 36 Upgrade</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.insighthealthapps.odyssey" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 7: Quanta Capsule (Android Native) -->
+            <article class="project-card" data-category="android" data-company="codeash" style="--drift-time: 7.7s; --drift-delay: -1.3s;">
+              <div class="project-img-wrapper">
+                <img src="images/insighthealthapps.quantacapsule.com_icon.png" alt="Quanta Capsule" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">07</span>
+                </div>
+                <h3 class="project-title">Quanta Capsule</h3>
+                <p class="project-desc">
+                  A secure companion app for biofeedback practitioners, allowing remote clients to record and submit voice files and receive personalized balancing audio frequencies.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Stripe Billing</span>
+                  <span class="tag">ProGuard Config</span>
+                  <span class="tag">Play Store Release</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=insighthealthapps.quantacapsule.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 8: Rife Frequencies (Android Native) -->
+            <article class="project-card" data-category="android" data-company="codeash" style="--drift-time: 8.5s; --drift-delay: -3.5s;">
+              <div class="project-img-wrapper">
+                <img src="images/insighthealthapps.rife_icon.png" alt="Rife Frequencies" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">08</span>
+                </div>
+                <h3 class="project-title">Rife Frequencies</h3>
+                <p class="project-desc">
+                  A comprehensive frequency generator player containing a large database of natural wellness sound frequencies (like Rife waves) for holistic body balance and sound therapy.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Frequency Player</span>
+                  <span class="tag">OnBackPressed</span>
+                  <span class="tag">SDK 36</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=insighthealthapps.rife" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+            
+            <!-- Project 9: YourTaxi Suite (Android Native) -->
+            <article class="project-card" data-category="android" data-company="tanna" style="--drift-time: 7.5s; --drift-delay: -1.2s;">
+              <div class="project-img-wrapper">
+                <img src="images/com.yourtaxi.Riderlive_icon.png" alt="YOURTAXI - Request Taxi 24h" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">09</span>
+                </div>
+                <h3 class="project-title">YOURTAXI - Request Taxi 24h</h3>
+                <p class="project-desc">
+                  A taxi booking app for riders and drivers used in Switzerland. I built live vehicle location tracking, route directions using Mapbox maps, and safety scoring using mobile sensors.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Mapbox SDK</span>
+                  <span class="tag">Telematics SDK</span>
+                  <span class="tag">Background Services</span>
+                  <span class="tag">REST API</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.yourtaxi.Riderlive" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2: Grow-Trees Ecosystem (Android Native) -->
+            <article class="project-card" data-category="android" data-company="tanna" style="--drift-time: 8.2s; --drift-delay: -3.0s;">
+              <div class="project-img-wrapper">
+                <img src="images/com.growtrees_icon.png" alt="Grow-Trees" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">10</span>
+                </div>
+                <h3 class="project-title">Grow-Trees</h3>
+                <p class="project-desc">
+                  An app that tracks steps and workouts to plant real-world trees. I set up secure online payments, offline forms for field reports, and GPS-tagged photos to verify tree planting.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Google Pay API</span>
+                  <span class="tag">Offline Cache</span>
+                  <span class="tag">Geo-Auditing</span>
+                  <span class="tag">SQLite</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.growtrees" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3: OnePlay Cloud Gaming (Android Native) -->
+            <article class="project-card" data-category="android" data-company="tanna" style="--drift-time: 6.8s; --drift-delay: -0.5s;">
+              <div class="project-img-wrapper">
+                <img src="images/in.oneplay_icon.png" alt="OnePlay Cloud Gaming &amp; PC" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">11</span>
+                </div>
+                <h3 class="project-title">OnePlay Cloud Gaming &amp; PC</h3>
+                <p class="project-desc">
+                  Worked on the native Android app for a cloud gaming service. I built a virtual game controller and set up fast video playing tools to ensure smooth gameplay.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">MediaCodec</span>
+                  <span class="tag">Virtual Gamepad</span>
+                  <span class="tag">Low-Latency Input</span>
+                  <span class="tag">H.264/HEVC</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=in.oneplay" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 4: Phyfarm Smart Agriculture (Android Native) -->
+            <article class="project-card" data-category="android" data-company="tanna" style="--drift-time: 7.9s; --drift-delay: -2.2s;">
+              <div class="project-img-wrapper">
+                <img src="images/com.phyfarm.app_icon.png" alt="PhyFarm" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">12</span>
+                </div>
+                <h3 class="project-title">PhyFarm</h3>
+                <p class="project-desc">
+                  An app for managing smart farms. I built custom Wi-Fi setup tools for farm devices, sensor charts to display live data, and remote controls to water plants.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">WiFi Provisioning</span>
+                  <span class="tag">IoT Telemetry</span>
+                  <span class="tag">WebServices</span>
+                  <span class="tag">MPAndroidChart</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.phyfarm.app" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 5: IMPCA Field Mapping (Android Native) -->
+            <article class="project-card" data-category="android" data-company="tanna" style="--drift-time: 8.5s; --drift-delay: -4.5s;">
+              <div class="project-img-wrapper">
+                <img src="images/com.impca.partner_icon.png" alt="Impca Partner" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">13</span>
+                </div>
+                <h3 class="project-title">Impca Partner</h3>
+                <p class="project-desc">
+                  An app for field surveys to track tree-planting. I built map features where users can draw farm areas on Google Maps and save plot coordinates offline.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Google Maps API</span>
+                  <span class="tag">KML/GeoJSON</span>
+                  <span class="tag">GPS Tracking</span>
+                  <span class="tag">Offline Forms</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.impca.partner" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 6: AICS Cargo & Logistics (Android Native) -->
+            <article class="project-card" data-category="android" data-company="tanna" style="--drift-time: 7.2s; --drift-delay: -1.8s;">
+              <div class="project-img-wrapper">
+                <img src="images/com.aics.customer_icon.png" alt="AICS Store" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">14</span>
+                </div>
+                <h3 class="project-title">AICS Store</h3>
+                <p class="project-desc">
+                  A booking and tracking app for sending couriers. Features live shipment tracking on a map, a locker rent calculator, and a document scanner.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Barcode Scanner</span>
+                  <span class="tag">Firebase Messaging</span>
+                  <span class="tag">PDF Invoicing</span>
+                  <span class="tag">REST API</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.aics.customer" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 7: QuickDesign Branding (Android Native) -->
+            <article class="project-card" data-category="android" data-company="tanna" style="--drift-time: 9.0s; --drift-delay: -5.8s;">
+              <div class="project-img-wrapper">
+                <img src="images/com.quickdesign_icon.png" alt="Quickly Design" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Android Native</span>
+                  <span class="project-num">15</span>
+                </div>
+                <h3 class="project-title">Quickly Design</h3>
+                <p class="project-desc">
+                  An app to design marketing posts and greetings. I built photo/video editing tools and templates for custom digital business cards.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Photo Editor SDK</span>
+                  <span class="tag">Wallet API</span>
+                  <span class="tag">Subscriptions</span>
+                  <span class="tag">Media Sharing</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.quickdesign" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 16: Ziflora (Freelance Flutter App) -->
+            <article class="project-card" data-category="flutter" data-company="freelance" style="--drift-time: 8.5s; --drift-delay: -2.2s;">
+              <div class="project-img-wrapper">
+                <img src="images/ziflora_user_logo.png" alt="Ziflora" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Flutter (Freelance)</span>
+                  <span class="project-num">16</span>
+                </div>
+                <h3 class="project-title">Ziflora</h3>
+                <p class="project-desc">
+                  An on-demand flower and gift delivery platform for customers. Features product discovery, customized gift orders, quick checkout via Razorpay, real-time delivery tracking, and OTP login using MSG91.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">GetX</span>
+                  <span class="tag">Firebase</span>
+                  <span class="tag">Razorpay</span>
+                  <span class="tag">MSG91 OTP</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.ziflora.app" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 17: Ziflora Vendor (Freelance Flutter App) -->
+            <article class="project-card" data-category="flutter" data-company="freelance" style="--drift-time: 7.8s; --drift-delay: -3.5s;">
+              <div class="project-img-wrapper">
+                <img src="images/ziflora_logo.png" alt="Ziflora Vendor" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Flutter (Freelance)</span>
+                  <span class="project-num">17</span>
+                </div>
+                <h3 class="project-title">Ziflora Vendor</h3>
+                <p class="project-desc">
+                  A dedicated merchant management platform for flower vendors and florists. Allows store owners to receive live orders, manage inventory, process product pricing, and track revenue with instant updates.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">GetX</span>
+                  <span class="tag">Firebase</span>
+                  <span class="tag">Order Management</span>
+                  <span class="tag">MSG91 OTP</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.ziflora.vendorapp" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Play Store</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 18: scroll_to_position (Flutter Package) -->
+            <article class="project-card" data-category="library" data-company="personal" style="--drift-time: 7.6s; --drift-delay: -1.0s;">
+              <div class="project-img-wrapper">
+                <img src="images/stellar_css_preview.png" alt="scroll_to_position package visual" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Flutter Package</span>
+                  <span class="project-num">18</span>
+                </div>
+                <h3 class="project-title">scroll_to_position</h3>
+                <p class="project-desc">
+                  A coding library for Flutter that helps developers scroll smoothly and instantly to a specific item in a list.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Dart</span>
+                  <span class="tag">Flutter SDK</span>
+                  <span class="tag">Programmatic Scroll</span>
+                  <span class="tag">Pub.dev</span>
+                  <span class="tag">List Index</span>
+                </div>
+                <a href="https://pub.dev/packages/scroll_to_position" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Pub.dev</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 19: truncate_text (Flutter Package) -->
+            <article class="project-card" data-category="library" data-company="personal" style="--drift-time: 8.4s; --drift-delay: -3.8s;">
+              <div class="project-img-wrapper">
+                <img src="images/stellar_css_preview.png" alt="truncate_text package visual" class="project-img">
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-category">Flutter Package</span>
+                  <span class="project-num">19</span>
+                </div>
+                <h3 class="project-title">truncate_text</h3>
+                <p class="project-desc">
+                  A Flutter UI tool that fits text labels inside a row and automatically displays a count (like "+3") for items that do not fit on the screen.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Dart</span>
+                  <span class="tag">Flutter SDK</span>
+                  <span class="tag">Text Formatting</span>
+                  <span class="tag">Pub.dev</span>
+                  <span class="tag">UI Optimization</span>
+                </div>
+                <a href="https://pub.dev/packages/truncate_text" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>View on Pub.dev</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-header">
+            <span class="section-tag">03 / Communication</span>
+            <h2 class="contact-title">Get In Touch</h2>
+            <p>Ready to build a mobile app? Let's connect.</p>
+          </div>
+          <div class="contact-details">
+            <a href="mailto:vatsalleshwala@gmail.com" class="contact-button">
+              <span class="btn-glow-layer"></span>
+              <span class="contact-btn-text">vatsalleshwala@gmail.com</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+          <div class="celestial-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="celestial-link">
+              <span>GitHub</span>
+              <span class="dot"></span>
+            </a>
+            <a href="https://www.linkedin.com/in/vatsal-leshwala" target="_blank" rel="noopener noreferrer" class="celestial-link">
+              <span>LinkedIn</span>
+              <span class="dot"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p>&copy; 2026 Vatsal Leshwala. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a href="#home" class="back-to-top">
+          <span>Back to Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Navigation Drawer Controller Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      // Toggle menu open/close
+      menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close menu when any anchor link is clicked
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+
+      // Close menu when clicking outside of it
+      document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          menuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+        }
+      });
+    });
+  </script>
+
+  <!-- Mouse Trail Particle Script -->
+  <script src="mouse-trail.js"></script>
+
+</body>
+</html>
